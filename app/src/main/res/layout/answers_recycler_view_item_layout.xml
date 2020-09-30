@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="answerItemViewModel"
+            type="com.example.stackoverflow.ui.fragment.answer.AnswerItemViewModel" />
+
+    </data>
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="2dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="5dp"
+            android:paddingBottom="5dp">
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glStart"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_begin="16dp" />
+
+            <androidx.constraintlayout.widget.Guideline
+                android:id="@+id/glEnd"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_end="16dp" />
+
+            <TextView
+                android:id="@+id/tvAnswer"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="top"
+                app:leftDrawable="@{answerItemViewModel.leftDrawable}"
+                app:isAccepted="@{answerItemViewModel.isAccepted}"
+                android:text="@{answerItemViewModel.answerBody}"
+                android:textColor="#222222"
+                app:layout_constraintEnd_toStartOf="@id/glEnd"
+                app:layout_constraintStart_toEndOf="@id/glStart"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="API Call Problems on Mate 10" />
+
+            <View
+                android:id="@+id/vw1"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="8dp"
+                android:background="#1A222222"
+                app:layout_constraintTop_toBottomOf="@id/tvAnswer" />
+
+            <TextView
+                android:id="@+id/tvVotesLabel"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="Votes"
+                app:layout_constraintBottom_toTopOf="@id/tvVotes"
+                app:layout_constraintEnd_toStartOf="@id/vwCenter"
+                app:layout_constraintStart_toEndOf="@id/glStart"
+                app:layout_constraintTop_toBottomOf="@id/vw1" />
+
+            <TextView
+                android:id="@+id/tvVotes"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginBottom="8dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{answerItemViewModel.voteCount}"
+                app:layout_constraintBottom_toTopOf="@id/barrierBottom"
+                app:layout_constraintEnd_toEndOf="@id/tvVotesLabel"
+                app:layout_constraintStart_toStartOf="@id/tvVotesLabel"
+                app:layout_constraintTop_toBottomOf="@id/tvVotesLabel"
+                tools:text="0" />
+
+            <View
+                android:id="@+id/vwCenter"
+                android:layout_width="1dp"
+                android:layout_height="0dp"
+                android:background="#1A222222"
+                app:layout_constraintBottom_toTopOf="@id/barrierBottom"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/vw1" />
+
+            <ImageView
+                android:id="@+id/ivOwnerPic"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_margin="10dp"
+                app:image_url="@{answerItemViewModel.ownerProfileImage}"
+                android:gravity="center"
+                app:layout_constraintBottom_toTopOf="@id/barrierBottom"
+                app:layout_constraintStart_toEndOf="@id/vwCenter"
+                app:layout_constraintTop_toBottomOf="@id/vw1" />
+
+            <TextView
+                android:id="@+id/tvOwnerDisplayName"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:text="@{answerItemViewModel.ownerDisplayName}"
+                app:layout_constraintEnd_toStartOf="@id/glEnd"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivOwnerPic"
+                app:layout_constraintTop_toTopOf="@id/ivOwnerPic"
+                tools:text="123" />
+
+            <TextView
+                android:id="@+id/tvOwnerReputation"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
+                android:layout_marginLeft="10dp"
+                android:layout_marginTop="4dp"
+                android:gravity="center"
+                android:textStyle="bold"
+                android:text="@{answerItemViewModel.ownerReputation}"
+                app:layout_constraintBottom_toTopOf="@id/barrierBottom"
+                app:layout_constraintEnd_toStartOf="@id/glEnd"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toEndOf="@id/ivOwnerPic"
+                app:layout_constraintTop_toBottomOf="@id/tvOwnerDisplayName"
+                tools:text="123" />
+
+            <androidx.constraintlayout.widget.Barrier
+                android:id="@+id/barrierBottom"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:barrierDirection="bottom"
+                app:constraint_referenced_ids="ivOwnerPic, tvOwnerDisplayName, tvOwnerReputation, tvVotes" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>
