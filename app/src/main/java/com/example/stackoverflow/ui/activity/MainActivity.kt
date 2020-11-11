@@ -7,7 +7,7 @@ import androidx.lifecycle.ViewModelProvider
 import com.example.stackoverflow.R
 import com.example.stackoverflow.ui.fragment.answer.AnswerFragment
 import com.example.stackoverflow.ui.fragment.home.HomeFragment
-import com.example.stackoverflow.ui.fragment.home.HomeViewModel
+import com.example.stackoverflow.viewmodels.HomeViewModel
 import com.example.stackoverflow.utils.loadFragment
 import com.example.stackoverflow.utils.toHtml
 

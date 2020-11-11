@@ -9,7 +9,7 @@
 
         <variable
             name="homeViewModel"
-            type="com.example.stackoverflow.ui.fragment.home.HomeViewModel" />
+            type="com.example.stackoverflow.viewmodels.HomeViewModel" />
 
     </data>
 

@@ -7,7 +7,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.stackoverflow.R
 import com.example.stackoverflow.databinding.AnswersRecyclerViewItemLayoutBinding
 import com.example.stackoverflow.model.AnswerItem
-import com.example.stackoverflow.ui.fragment.answer.AnswerItemViewModel
+import com.example.stackoverflow.viewmodels.AnswerItemViewModel
 
 class AnswerRecyclerViewAdapter :
     RecyclerView.Adapter<AnswerRecyclerViewAdapter.MyViewHolder>() {

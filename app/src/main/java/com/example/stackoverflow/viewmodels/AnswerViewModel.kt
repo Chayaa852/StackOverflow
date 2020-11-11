@@ -1,4 +1,4 @@
-package com.example.stackoverflow.ui.fragment.answer
+package com.example.stackoverflow.viewmodels
 
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel

@@ -8,7 +8,7 @@ import com.example.stackoverflow.R
 import com.example.stackoverflow.databinding.QuestionRecyclerViewItemLayoutBinding
 import com.example.stackoverflow.interfaces.OnItemSelectedListener
 import com.example.stackoverflow.model.QuestionResponseItem
-import com.example.stackoverflow.ui.fragment.home.QuestionResponseItemViewModel
+import com.example.stackoverflow.viewmodels.QuestionResponseItemViewModel
 
 class QuestionRecyclerViewAdapter(private val onItemSelectedListener: OnItemSelectedListener) :
     RecyclerView.Adapter<QuestionRecyclerViewAdapter.MyViewHolder>() {

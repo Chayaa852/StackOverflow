@@ -11,6 +11,8 @@ import com.example.stackoverflow.R
 import com.example.stackoverflow.adapter.AnswerRecyclerViewAdapter
 import com.example.stackoverflow.databinding.FragmentAnswerBinding
 import com.example.stackoverflow.model.QuestionResponseItem
+import com.example.stackoverflow.viewmodels.AnswerViewModel
+import com.example.stackoverflow.viewmodels.AnswerViewModelFactory
 
 class AnswerFragment : Fragment() {
 

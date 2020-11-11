@@ -7,7 +7,7 @@
 
         <variable
             name="answerItemViewModel"
-            type="com.example.stackoverflow.ui.fragment.answer.AnswerItemViewModel" />
+            type="com.example.stackoverflow.viewmodels.AnswerItemViewModel" />
 
     </data>
 
